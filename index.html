@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CPSC 319 Project Showcase at UBC. Meet the teams, explore real client projects, and RSVP for the final event."
+    />
+    <title>CPSC 319 Project Showcase | UBC Computer Science</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <canvas id="orb-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header glass">
+      <a class="brand" href="#hero" aria-label="CPSC 319 Showcase home">
+        <span class="brand-mark">CPSC 319</span>
+        <span class="brand-sub">Showcase</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#clients">Clients</a>
+        <a href="#projects">Projects</a>
+        <a href="#event">Event</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main>
+      <section id="hero" class="hero reveal">
+        <div class="hero-shell">
+          <div class="hero-content">
+            <p class="eyebrow">UBC CPSC 319 · Software Engineering Project</p>
+            <h1>
+              Build Real Software.<br />
+              Ship It Live.
+            </h1>
+            <p class="hero-copy">14 teams built products for 5 organizations. Meet them on April 8.</p>
+            <div class="hero-chip-row">
+              <span class="hero-chip glass">69 Students</span>
+              <span class="hero-chip glass">14 Teams</span>
+              <span class="hero-chip glass">5 Clients</span>
+              <span class="hero-chip glass">One Night</span>
+            </div>
+            <div class="cta-row">
+              <a class="button primary" href="#rsvp">RSVP Now</a>
+              <a class="button ghost" href="#projects">Explore Projects</a>
+            </div>
+            <p class="event-ribbon glass">
+              <span>📅 Wed, April 8, 2026</span>
+              <span>🕠 5:30–7:30 PM</span>
+              <span>📍 CS Atrium (X-Wing), UBC</span>
+            </p>
+          </div>
+
+          <aside class="hero-visual glass" aria-label="Showcase highlights">
+            <p class="meta-label">Showcase Console</p>
+            <h3 id="hero-rotator">Now Spotlighting: Benevity</h3>
+            <div class="signal-grid">
+              <article class="signal-card">
+                <p class="signal-label">Countdown</p>
+                <p id="hero-countdown" class="signal-value">Loading…</p>
+              </article>
+              <article class="signal-card">
+                <p class="signal-label">Site Visits</p>
+                <p class="signal-value"><span id="visit-count">0</span></p>
+              </article>
+              <article class="signal-card">
+                <p class="signal-label">RSVPs</p>
+                <p class="signal-value"><span id="rsvp-count">0</span></p>
+              </article>
+              <article class="signal-card">
+                <p class="signal-label">Live Stations</p>
+                <p class="signal-value">14</p>
+              </article>
+            </div>
+            <div class="live-bars" aria-hidden="true">
+              <span style="--w:82%"></span>
+              <span style="--w:68%"></span>
+              <span style="--w:90%"></span>
+              <span style="--w:74%"></span>
+            </div>
+            <div class="hero-marquee" aria-hidden="true">
+              <div class="marquee-track">
+                <span>Benevity</span>
+                <span>Surrey Food Bank</span>
+                <span>Aunt Leah's</span>
+                <span>FeathersJS</span>
+                <span>Open WebUI</span>
+                <span>Benevity</span>
+                <span>Surrey Food Bank</span>
+                <span>Aunt Leah's</span>
+                <span>FeathersJS</span>
+                <span>Open WebUI</span>
+              </div>
+            </div>
+            <button class="button ghost quick-jump" type="button" data-jump="#event">See Event Flow</button>
+          </aside>
+        </div>
+
+        <div class="hero-floaters" aria-hidden="true">
+          <span class="floater glass f1">Client Demos</span>
+          <span class="floater glass f2">Live Q&A</span>
+          <span class="floater glass f3">Build. Test. Launch.</span>
+        </div>
+        <button class="scroll-cue" type="button" data-jump="#about" aria-label="Scroll to About section">Scroll ↓</button>
+      </section>
+
+      <section id="about" class="section reveal">
+        <div class="section-head">
+          <p class="kicker">About CPSC 319</p>
+          <h2>Where Software Meets the Real World</h2>
+        </div>
+        <div class="about-grid">
+          <div class="glass copy-card">
+            <p>
+              CPSC 319 is a capstone-style course where teams build software for real organizations.
+              Students work directly with stakeholders and ship production-ready outcomes.
+            </p>
+            <p>
+              The course focuses on agile delivery, technical communication, and strong engineering
+              habits. The showcase is the public launch.
+            </p>
+          </div>
+          <div class="glass stats">
+            <div class="stat-item">
+              <p class="stat-number" data-target="69">0</p>
+              <p class="stat-label">Students</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number" data-target="14">0</p>
+              <p class="stat-label">Teams</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number" data-target="5">0</p>
+              <p class="stat-label">Clients</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number" data-target="1">0</p>
+              <p class="stat-label">Semester</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number">∞</p>
+              <p class="stat-label">Lines of Code</p>
+            </div>
+          </div>
+        </div>
+        <p class="credit-line">
+          Led by [Instructor Name] with TA coordination by Fahim and a team of dedicated TAs:
+          Mostyn, Kelly, Stash, Matthew, and Madi.
+        </p>
+      </section>
+
+      <section id="clients" class="section reveal">
+        <div class="section-head">
+          <p class="kicker">Built For</p>
+          <h2>Our Clients</h2>
+        </div>
+        <div id="client-grid" class="client-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <div class="section-head">
+          <p class="kicker">The Main Event</p>
+          <h2>Project Showcase</h2>
+        </div>
+        <div id="project-filters" class="filters" role="tablist" aria-label="Filter projects by client"></div>
+        <div id="project-grid" class="project-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="event" class="section reveal">
+        <div class="section-head">
+          <p class="kicker">Join Us</p>
+          <h2>The Showcase Event</h2>
+        </div>
+        <div class="event-layout">
+          <div class="glass event-card">
+            <p><strong>📅 Date:</strong> Wednesday, April 8, 2026</p>
+            <p><strong>🕠 Time:</strong> 5:30 PM – 7:30 PM</p>
+            <p><strong>📍 Location:</strong> CS Atrium (X-Wing), Hugh Dempster Pavilion, UBC</p>
+            <p class="event-body">
+              Walk the floor, meet teams, and see live demos. Light refreshments will be provided.
+            </p>
+            <p class="mono">
+              Countdown: <span id="countdown">Loading…</span>
+            </p>
+          </div>
+          <div class="glass timeline-card">
+            <h3>Evening Flow</h3>
+            <ol class="timeline">
+              <li><span>5:30 PM</span> Doors Open & Setup</li>
+              <li><span>5:45 PM</span> Welcome & Opening Remarks</li>
+              <li><span>6:00 PM</span> Open Floor — Visit Project Stations</li>
+              <li><span>7:15 PM</span> Closing Remarks</li>
+              <li><span>7:30 PM</span> Wrap-Up</li>
+            </ol>
+            <p class="event-notes">
+              Transit: Main Mall bus routes and nearby stops are a short walk away. Parking is
+              available in nearby campus parkades.
+            </p>
+          </div>
+          <div class="glass map-card">
+            <h3>Venue Map</h3>
+            <iframe
+              title="Map to UBC Hugh Dempster Pavilion"
+              src="https://www.google.com/maps?q=Hugh+Dempster+Pavilion+UBC&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp" class="section reveal">
+        <div class="section-head center">
+          <p class="kicker">Reserve Your Spot</p>
+          <h2>RSVP</h2>
+        </div>
+        <div class="glass form-shell">
+          <form id="rsvp-form" novalidate>
+            <div class="field">
+              <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+              <input id="full-name" name="fullName" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="role">Affiliation / Role</label>
+              <select id="role" name="role">
+                <option value="Student">Student</option>
+                <option value="Faculty">Faculty</option>
+                <option value="Industry Professional">Industry Professional</option>
+                <option value="Client">Client</option>
+                <option value="Community Member">Community Member</option>
+                <option value="Press/Media">Press/Media</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="source">How did you hear about this event?</label>
+              <input id="source" name="source" type="text" />
+            </div>
+            <div class="field">
+              <label for="needs">Dietary restrictions or accessibility needs</label>
+              <textarea id="needs" name="needs" rows="4"></textarea>
+            </div>
+            <div class="checkbox-row">
+              <input id="updates" name="updates" type="checkbox" />
+              <label for="updates">I'd like to receive updates about future CPSC 319 showcases.</label>
+            </div>
+            <button class="button primary submit" type="submit">
+              <span class="label">Save My Spot</span>
+              <span class="check" aria-hidden="true">✓</span>
+            </button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div id="form-success" class="form-success" hidden>
+            <h3>You're in.</h3>
+            <p>We'll send event details to your inbox. See you April 8.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>UBC Department of Computer Science</strong></p>
+        <p>CPSC 319 — Software Engineering Project</p>
+        <p>Instructor: [Instructor Name] · TA Coordination: Fahim + TA Team</p>
+        <p class="footer-links">
+          <a href="https://www.cs.ubc.ca/" target="_blank" rel="noreferrer">UBC CS Department</a>
+          <a href="#hero">Course Showcase</a>
+          <a href="mailto:cpsc319@cs.ubc.ca">cpsc319@cs.ubc.ca</a>
+        </p>
+      </div>
+    </footer>
+
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-panel glass">
+        <button id="close-modal" class="close-modal" type="button" aria-label="Close project details">×</button>
+        <p id="modal-client" class="kicker"></p>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <div id="modal-gallery" class="modal-gallery"></div>
+        <div id="modal-features" class="chips"></div>
+        <p class="modal-label">Team Members</p>
+        <p id="modal-team" class="mono"></p>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
