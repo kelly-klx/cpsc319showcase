@@ -196,7 +196,7 @@ const storageKeys = {
 const projectImageSets = {
   "benevity-a": ["images/benevityA1.png", "images/benevityA2.png"],
   "benevity-b": ["images/benevityB1.png", "images/benevityB2.png"],
-  "benevity-c": ["images/benevityC1.png", "images/benevityC2.png"],
+  "benevity-c": ["images/benevityC2.jpeg", "images/benevityC1.jpeg"],
   "surrey-a": ["images/surreyA1.png", "images/surreyA2.png"],
   "surrey-b": ["images/surreyB1.png", "images/surreyB2.png"],
   "surrey-c": ["images/surreyC1.png", "images/surreyC2.png"],
