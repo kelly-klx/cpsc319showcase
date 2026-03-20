@@ -2,6 +2,7 @@ const clients = [
   {
     name: "Benevity",
     acronym: "BE",
+    url: "https://benevity.com/",
     description:
       "Benevity is a software company that provides a corporate purpose platform supporting corporate social responsibility initiatives. The platform enables organizations to engage employees, customers, and communities through vetted nonprofit partnerships.",
     color: "#0055B7",
@@ -9,6 +10,7 @@ const clients = [
   {
     name: "Surrey Food Bank",
     acronym: "SF",
+    url: "https://surreyfoodbank.org/",
     description:
       "Serving since 1983, The Surrey Food Bank Society is a non-profit organization whose mission is to provide food assistance and support services to individuals and families in need within Surrey and North Delta, British Columbia.",
     color: "#34A853",
@@ -16,6 +18,7 @@ const clients = [
   {
     name: "Aunt Leah's",
     acronym: "AL",
+    url: "https://auntleahs.org/",
     description:
       "Aunt Leah's Place is a nonprofit organization that supports supporting at-risk youth and mothers. They provide housing, education, and life skills training to help young people and mothers transition to independent living.",
     color: "#E65100",
@@ -23,6 +26,7 @@ const clients = [
   {
     name: "FeathersJS",
     acronym: "FJ",
+    url: "https://feathers.dev/",
     description:
       "FeathersJS is an open source full-stack web-framework for creating APIs and real-time applications with TypeScript or JavaScript. It can interact with any backend and frontend technology, and supports many databases out of the box.",
     color: "#7C3AED",
@@ -30,6 +34,7 @@ const clients = [
   {
     name: "Open WebUI",
     acronym: "OW",
+    url: "https://openwebui.com/",
     description:
       "Open WebUI is a self-hosted AI platform that provides a web-based workspace for interacting with LLMs and integrating AI into internal workflows. The platform emphasizes privacy, offline or controlled deployments, and flexibility.",
     color: "#0EA5A4",
@@ -122,7 +127,7 @@ const projects = [
     id: "feathers-a",
     team: "Team A",
     client: "FeathersJS",
-    url: "https://feathers-mcp-dashboard.pages.dev/",
+    url: "https://github.com/paipeng05/Feathers-MCP-System",
     members: ["Tanner Bowie", "Thien Buathong", "Yikai Fang", "Jack Ferneyhough", "Pai Peng"],
     gradient: "linear-gradient(135deg, #8B5CF6, #312E81)",
     gallery: ["Registry Index", "Package Details", "Validation Report"],
@@ -170,6 +175,14 @@ const clientGrid = document.getElementById("client-grid");
 const projectGrid = document.getElementById("project-grid");
 const filterBar = document.getElementById("project-filters");
 const themeToggle = document.getElementById("theme-toggle");
+const navToggle = document.getElementById("nav-toggle");
+const siteHeader = document.querySelector(".site-header");
+const siteNav = document.getElementById("site-nav");
+const heroShell = document.querySelector(".hero-shell");
+const heroContent = document.querySelector(".hero-content");
+const heroVisual = document.querySelector(".hero-visual");
+const aboutSection = document.getElementById("about");
+const aboutAnchor = document.getElementById("about-anchor");
 const heroSection = document.getElementById("hero");
 const heroRotatorEl = document.getElementById("hero-rotator");
 const heroCountdownEl = document.getElementById("hero-countdown");
@@ -263,6 +276,7 @@ function toggleTheme() {
 }
 
 function updateVisitCount() {
+  if (!visitCountEl) return;
   let visits = Number(localStorage.getItem(storageKeys.visits) || 0);
   if (!sessionStorage.getItem(storageKeys.visitSessionFlag)) {
     visits += 1;
@@ -282,14 +296,43 @@ function renderClients() {
   clientGrid.innerHTML = clients
     .map(
       (client) => `
-      <article class="client-card glass reveal" style="--client-color:${client.color}">
-        <div class="logo-badge" style="background:${client.color}">${client.acronym}</div>
+      <article
+        class="client-card glass reveal"
+        data-client-name="${client.name}"
+        tabindex="0"
+        role="button"
+        aria-label="${client.url ? `Open ${client.name} website` : client.name}"
+        style="--client-color:${client.color}"
+      >
         <h3>${client.name}</h3>
         <p>${client.description}</p>
       </article>
     `,
     )
     .join("");
+
+  wireClientCards();
+}
+
+function openClientDestination(client) {
+  if (!client?.url) return;
+  window.open(client.url, "_blank", "noopener,noreferrer");
+}
+
+function wireClientCards() {
+  clientGrid.querySelectorAll(".client-card").forEach((card) => {
+    const clientName = card.getAttribute("data-client-name");
+    const client = clients.find((entry) => entry.name === clientName);
+    if (!client?.url) return;
+
+    card.addEventListener("click", () => openClientDestination(client));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openClientDestination(client);
+      }
+    });
+  });
 }
 
 function getFilters() {
@@ -624,6 +667,54 @@ function setupSmoothScrolling() {
   });
 }
 
+function setNavOpen(isOpen) {
+  if (!siteHeader || !navToggle) return;
+  siteHeader.classList.toggle("nav-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+}
+
+function setupMobileNav() {
+  if (!navToggle || !siteHeader || !siteNav) return;
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.contains("nav-open");
+    setNavOpen(!isOpen);
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 760) {
+        setNavOpen(false);
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      setNavOpen(false);
+    }
+  });
+}
+
+function placeAboutSection() {
+  if (!aboutSection || !aboutAnchor || !heroShell || !heroContent || !heroVisual) return;
+
+  if (window.innerWidth <= 760) {
+    if (heroShell.contains(aboutSection)) return;
+    heroShell.insertBefore(aboutSection, heroVisual);
+    return;
+  }
+
+  if (aboutAnchor.parentNode && aboutAnchor.nextElementSibling !== aboutSection) {
+    aboutAnchor.parentNode.insertBefore(aboutSection, aboutAnchor.nextSibling);
+  }
+}
+
+function setupMobileAboutPlacement() {
+  placeAboutSection();
+  window.addEventListener("resize", placeAboutSection);
+}
+
 function setupHeroInteractions() {
   if (!heroSection) return;
 
@@ -829,6 +920,8 @@ function setup() {
   observeReveal();
   observeStats();
   setupSmoothScrolling();
+  setupMobileNav();
+  setupMobileAboutPlacement();
   setupHeroInteractions();
   updateVisitCount();
   updateRsvpCount();

@@ -27,7 +27,19 @@
         <span class="brand-mark">CPSC 319</span>
         <span class="brand-sub">Showcase</span>
       </a>
-      <nav aria-label="Primary">
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#clients">Clients</a>
         <a href="#projects">Projects</a>
@@ -74,18 +86,6 @@
                 <p class="signal-label">Countdown</p>
                 <p id="hero-countdown" class="signal-value">Loading…</p>
               </article>
-              <article class="signal-card">
-                <p class="signal-label">Site Visits</p>
-                <p class="signal-value"><span id="visit-count">0</span></p>
-              </article>
-              <article class="signal-card">
-                <p class="signal-label">RSVPs</p>
-                <p class="signal-value"><span id="rsvp-count">0</span></p>
-              </article>
-              <article class="signal-card">
-                <p class="signal-label">Live Stations</p>
-                <p class="signal-value">14</p>
-              </article>
             </div>
             <div class="live-bars" aria-hidden="true">
               <span style="--w:82%"></span>
@@ -114,6 +114,7 @@
         <button class="scroll-cue" type="button" data-jump="#about" aria-label="Scroll to About section">Scroll ↓</button>
       </section>
 
+      <div id="about-anchor" aria-hidden="true"></div>
       <section id="about" class="section reveal">
         <div class="section-head">
           <p class="kicker">About CPSC 319</p>
