@@ -122,7 +122,7 @@ a {
 
 <<<<<<< HEAD
 .nav-toggle {
-  display: none;
+  display: none !important;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 999px;
@@ -137,6 +137,7 @@ a {
 }
 
 .nav-toggle span {
+  display: block;
   width: 1rem;
   height: 2px;
   border-radius: 999px;
@@ -1247,7 +1248,7 @@ a:focus-visible {
   }
 
   .nav-toggle {
-    display: inline-flex;
+    display: inline-flex !important;
     margin-left: auto;
   }
 
