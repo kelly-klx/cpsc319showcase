@@ -556,7 +556,7 @@ p {
 .copy-card p {
   font-size: clamp(1.08rem, 1.45vw, 1.26rem);
   line-height: 1.82;
-  max-width: 68ch;
+  max-width: 100%;
 }
 
 .stats {
@@ -704,6 +704,10 @@ p {
   align-items: end;
   justify-content: flex-start;
   background-size: cover;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: pan-y;
 }
 
 .project-media span {
@@ -711,6 +715,80 @@ p {
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.25);
   font-size: 0.74rem;
+}
+
+.project-shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  user-select: none;
+}
+
+.project-shot.active {
+  opacity: 1;
+}
+
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.34));
+  pointer-events: none;
+}
+
+.media-arrow,
+.media-dots {
+  position: absolute;
+  z-index: 1;
+}
+
+.media-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(12, 21, 38, 0.62);
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.media-arrow.prev {
+  left: 0.55rem;
+}
+
+.media-arrow.next {
+  right: 0.55rem;
+}
+
+.media-dots {
+  left: 50%;
+  bottom: 0.62rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.36rem;
+}
+
+.media-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.media-dot.active {
+  background: #fff;
 }
 
 .project-title {
@@ -910,6 +988,10 @@ a:focus-visible {
   padding: 0.9rem 0.2rem 0.4rem;
 }
 
+.form-success .submit {
+  margin-top: 0.9rem;
+}
+
 .site-footer {
   background: #002145;
   color: #d8e5ff;
@@ -996,6 +1078,11 @@ a:focus-visible {
 .modal-shot {
   border-radius: 0.62rem;
   aspect-ratio: 16 / 10;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal-shot-placeholder {
   color: #fff;
   display: flex;
   align-items: end;
