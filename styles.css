@@ -120,6 +120,29 @@ a {
   color: var(--muted);
 }
 
+.nav-toggle {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 0.24rem;
+  flex-direction: column;
+}
+
+.nav-toggle span {
+  width: 1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -372,7 +395,7 @@ p {
 
 .signal-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.55rem;
 }
 
@@ -380,7 +403,7 @@ p {
   border: 1px solid var(--card-border);
   background: color-mix(in srgb, var(--card) 92%, transparent);
   border-radius: 0.85rem;
-  padding: 0.75rem;
+  padding: 0.95rem 1rem;
 }
 
 .signal-label {
@@ -392,13 +415,14 @@ p {
 
 .signal-value {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  margin-top: 0.1rem;
+  font-size: 1.35rem;
+  margin-top: 0.18rem;
 }
 
 .live-bars {
   display: grid;
   gap: 0.45rem;
+  margin-top: 0.25rem;
 }
 
 .live-bars span {
@@ -443,7 +467,7 @@ p {
 
 .quick-jump {
   width: fit-content;
-  margin-top: 0.1rem;
+  margin-top: 0.35rem;
 }
 
 .scroll-cue {
@@ -1193,23 +1217,51 @@ a:focus-visible {
     margin-top: 0.6rem;
     gap: 0.6rem;
     padding: 0.85rem 0.9rem;
+    border-radius: 1.3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .theme-toggle {
+    order: 2;
   }
 
   nav {
-    justify-content: flex-start;
-    overflow-x: auto;
+    display: none;
+    order: 3;
     width: 100%;
-    padding-bottom: 0.2rem;
+    padding-top: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .site-header.nav-open nav {
+    display: flex;
+  }
+
+  .site-header.nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   nav a {
     white-space: nowrap;
-    padding: 0.22rem 0.16rem;
+    padding: 0.38rem 0;
     font-size: 0.9rem;
-  }
-
-  nav::-webkit-scrollbar {
-    display: none;
+    width: 100%;
   }
 
   .hero {
@@ -1255,8 +1307,7 @@ a:focus-visible {
   }
 
   .hero-visual {
-    padding: 1rem 0.95rem;
-    border-radius: 1rem;
+    display: none;
   }
 
   .signal-grid {
