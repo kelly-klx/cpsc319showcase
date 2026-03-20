@@ -3,40 +3,35 @@ const clients = [
     name: "Benevity",
     acronym: "BE",
     description:
-      "A global corporate purpose platform helping companies activate social impact through employee giving, volunteering, and grantmaking.",
-    teams: 3,
+      "Benevity is a software company that provides a corporate purpose platform supporting corporate social responsibility initiatives. The platform enables organizations to engage employees, customers, and communities through vetted nonprofit partnerships.",
     color: "#0055B7",
   },
   {
     name: "Surrey Food Bank",
     acronym: "SF",
     description:
-      "A frontline community organization providing food support, outreach, and dignity-driven services to people across Surrey.",
-    teams: 3,
+      "Serving since 1983, The Surrey Food Bank Society is a non-profit organization whose mission is to provide food assistance and support services to individuals and families in need within Surrey and North Delta, British Columbia.",
     color: "#34A853",
   },
   {
     name: "Aunt Leah's",
     acronym: "AL",
     description:
-      "A social enterprise and charitable organization supporting youth in foster care and mothers at risk of homelessness.",
-    teams: 3,
+      "Aunt Leah's Place is a nonprofit organization that supports supporting at-risk youth and mothers. They provide housing, education, and life skills training to help young people and mothers transition to independent living.",
     color: "#E65100",
   },
   {
     name: "FeathersJS",
     acronym: "FJ",
     description:
-      "An open-source framework for building real-time applications and APIs, trusted by developers shipping modern JS products.",
-    teams: 3,
+      "FeathersJS is an open source full-stack web-framework for creating APIs and real-time applications with TypeScript or JavaScript. It can interact with any backend and frontend technology, and supports many databases out of the box.",
     color: "#7C3AED",
   },
   {
     name: "Open WebUI",
     acronym: "OW",
     description:
-      "A leading open-source interface for LLM workflows, enabling secure, local-first and enterprise-ready AI collaboration.",
-    teams: 2,
+      "Open WebUI is a self-hosted AI platform that provides a web-based workspace for interacting with LLMs and integrating AI into internal workflows. The platform emphasizes privacy, offline or controlled deployments, and flexibility.",
     color: "#0EA5A4",
   },
 ];
@@ -44,183 +39,127 @@ const clients = [
 const projects = [
   {
     id: "benevity-a",
-    title: "Impact Story Composer",
     team: "Team A",
     client: "Benevity",
-    description:
-      "Built a guided storytelling workflow that helps admins assemble campaign narratives with reusable templates and metrics blocks.",
-    stack: ["React", "Node.js", "PostgreSQL", "Tailwind"],
-    members: ["Amelia", "Noah", "Iris", "Karan", "Leo"],
-    features: ["Template library", "Campaign analytics", "Approval workflow", "Multi-org permissions"],
+    url: "https://benevity-reach.vercel.app/",
+    members: ["Sarah Yu", "Gordon Chieng", "Anahita Golshani", "Kevin Liu", "Rafael Park"],
     gradient: "linear-gradient(135deg, #1C64F2, #0B1C38)",
     gallery: ["Dashboard", "Story Builder", "Campaign Insights"],
   },
   {
     id: "benevity-b",
-    title: "Volunteer Shift Optimizer",
     team: "Team B",
     client: "Benevity",
-    description:
-      "Created an assignment engine that matches employees to volunteer opportunities based on availability, interest, and skill fit.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Redis"],
-    members: ["Ava", "Mason", "Rina", "Yusuf", "Ella"],
-    features: ["Preference matching", "Calendar sync", "Admin override tools", "Exportable reports"],
+    url: "https://benevity-impact-project.web.app/",
+    members: ["Meera Jheeta", "Michealla Koan", "Nicholas Januar", "Nathan Jiang", "Trung Nguyen"],
     gradient: "linear-gradient(145deg, #2563EB, #60A5FA)",
     gallery: ["Matching Engine", "Availability Planner", "Shift Snapshot"],
   },
   {
     id: "benevity-c",
-    title: "Grant Review Workspace",
     team: "Team C",
     client: "Benevity",
-    description:
-      "Designed a streamlined reviewer workspace for grant submissions, reducing handoff friction and review turnaround time.",
-    stack: ["Vue", "Express", "MongoDB", "Docker"],
-    members: ["Jaden", "Sophia", "Mia", "Ethan", "Rory"],
-    features: ["Review queues", "Decision history", "Reviewer notes", "Role-based access"],
+    url: "https://frontend-1000716781297.us-central1.run.app/",
+    members: ["Jack Do", "Kshitij Gomber", "Connor Morrison", "Tim Sabanshi", "Manan Sharma"],
     gradient: "linear-gradient(140deg, #1D4ED8, #0F172A)",
     gallery: ["Submission Queue", "Review Panel", "Decision Log"],
   },
   {
     id: "surrey-a",
-    title: "Food Hamper Routing Portal",
-    team: "Team D",
+    team: "Team A",
     client: "Surrey Food Bank",
-    description:
-      "Implemented intake-to-delivery routing for hamper requests, helping staff prioritize urgency and optimize volunteer dispatch.",
-    stack: ["React", "NestJS", "PostgreSQL", "Leaflet"],
-    members: ["Kai", "Nora", "Ibrahim", "Skye", "Dylan"],
-    features: ["Intake triage", "Route planning", "Volunteer assignment", "Daily dispatch board"],
+    url: "https://annaliese8.github.io/CPSC319_Project/#/entrance-portal-1M8F/login",
+    members: ["Annaliese Ferchau", "Mehrshad Esmaeilzadeh", "Kathrina Pillay", "Ishan Singh", "Nina Trochtchanovitch"],
     gradient: "linear-gradient(145deg, #15803D, #86EFAC)",
     gallery: ["Request Intake", "Route Board", "Volunteer Assignments"],
   },
   {
     id: "surrey-b",
-    title: "Inventory Signal Dashboard",
-    team: "Team E",
+    team: "Team B",
     client: "Surrey Food Bank",
-    description:
-      "Delivered inventory forecasting dashboards to surface shortage risks and improve donation campaign timing.",
-    stack: ["SvelteKit", "Python API", "SQLite", "Chart.js"],
-    members: ["Maya", "Logan", "Arjun", "Priya", "Finn"],
-    features: ["Stock trend graphs", "Low-stock alerts", "Seasonality views", "Donation recommendations"],
+    url: "http://surreyfoodbank.duckdns.org/",
+    members: ["Hsiang-chen Alan Wu", "Aric Chan", "Kevin Xu", "Aman Dhaddey", "Eric Zhang"],
     gradient: "linear-gradient(130deg, #16A34A, #14532D)",
     gallery: ["Forecasting", "Low Stock Feed", "Campaign Planner"],
   },
   {
     id: "surrey-c",
-    title: "Community Referral Console",
-    team: "Team F",
+    team: "Team C",
     client: "Surrey Food Bank",
-    description:
-      "Built a secure referral console connecting partner agencies with food bank intake services while preserving client privacy.",
-    stack: ["Angular", "Node.js", "MySQL", "Auth0"],
-    members: ["Zara", "Harper", "Carter", "Jules", "Theo"],
-    features: ["Agency referrals", "Secure intake packets", "Consent management", "Audit logs"],
+    url: "https://surrey-food-bank-frontend.onrender.com/",
+    members: ["Allison Ko", "Lokesh Sandhu", "Pia Lo", "Sanyu Lin", "John Man"],
     gradient: "linear-gradient(150deg, #22C55E, #065F46)",
     gallery: ["Agency Portal", "Intake Packet", "Referral Status"],
   },
   {
     id: "auntleahs-a",
-    title: "Housing Pathway Tracker",
-    team: "Team G",
+    team: "Team A",
     client: "Aunt Leah's",
-    description:
-      "Created a case-management interface for tracking youth housing milestones, appointments, and support outcomes.",
-    stack: ["React", "GraphQL", "PostgreSQL", "Vite"],
-    members: ["Sienna", "Nikhil", "Grace", "Owen", "Lucas"],
-    features: ["Milestone tracking", "Case notes", "Reminder workflows", "Outcome summaries"],
+    url: "https://aunt-leah-content-management-system.vercel.app/",
+    members: ["Ericson Ho", "Pranav Laiya", "Dylan Medjnoun", "Lin Wang", "Angelina Zoght"],
     gradient: "linear-gradient(125deg, #FB923C, #9A3412)",
     gallery: ["Case Overview", "Timeline", "Outcome Summary"],
   },
   {
     id: "auntleahs-b",
-    title: "Donor Impact Studio",
-    team: "Team H",
+    team: "Team B",
     client: "Aunt Leah's",
-    description:
-      "Designed a donor engagement dashboard translating program data into clear, narrative impact snapshots for fundraising.",
-    stack: ["Next.js", "Supabase", "D3.js", "TypeScript"],
-    members: ["Brook", "Ravi", "Mei", "Hugo", "Ari"],
-    features: ["Impact narratives", "Donor segmentation", "Exportable briefings", "Campaign metrics"],
+    url: "https://aunt-leah-b.vercel.app/",
+    members: ["Shreyan Das", "Aryan Saini", "David Falade", "Kyaw Min Oo", "Michael Sam"],
     gradient: "linear-gradient(145deg, #F97316, #FDBA74)",
     gallery: ["Impact Dashboard", "Donor Segments", "Campaign Results"],
   },
   {
     id: "auntleahs-c",
-    title: "Volunteer Journey Portal",
-    team: "Team I",
+    team: "Team C",
     client: "Aunt Leah's",
-    description:
-      "Built an onboarding and scheduling portal that improves volunteer retention through clearer task pathways.",
-    stack: ["Vue", "Firebase", "Pinia", "Cloud Functions"],
-    members: ["Nina", "Wes", "Daniel", "Ayla", "Samir"],
-    features: ["Onboarding checklist", "Task signups", "Shift reminders", "Volunteer history"],
+    url: "https://d3jqquumsq5ngm.cloudfront.net/",
+    members: ["Kaicheng Lu", "Vitor Wakamatsu", "Howard Sun", "Ch Muhammad Daud Virk", "Zishan Wang"],
     gradient: "linear-gradient(150deg, #EA580C, #7C2D12)",
     gallery: ["Onboarding", "Task Board", "Shift Planner"],
   },
   {
     id: "feathers-a",
-    title: "Plugin Registry Manager",
-    team: "Team J",
+    team: "Team A",
     client: "FeathersJS",
-    description:
-      "Shipped a registry workflow for publishing, validating, and versioning community plugins with CI-ready metadata.",
-    stack: ["React", "FeathersJS", "MongoDB", "Jest"],
-    members: ["Liam", "Anya", "Parker", "Nadia", "Eli"],
-    features: ["Package validation", "Version timeline", "Maintainer handoff", "Security checks"],
+    url: "https://feathers-mcp-dashboard.pages.dev/",
+    members: ["Tanner Bowie", "Thien Buathong", "Yikai Fang", "Jack Ferneyhough", "Pai Peng"],
     gradient: "linear-gradient(135deg, #8B5CF6, #312E81)",
     gallery: ["Registry Index", "Package Details", "Validation Report"],
   },
   {
     id: "feathers-b",
-    title: "Realtime Ops Monitor",
-    team: "Team K",
+    team: "Team B",
     client: "FeathersJS",
-    description:
-      "Implemented a runtime observability layer for socket events and service calls across distributed Feathers deployments.",
-    stack: ["SolidJS", "FeathersJS", "InfluxDB", "Grafana"],
-    members: ["Milo", "Yara", "Sofia", "Kenji", "Malik"],
-    features: ["Realtime stream view", "Service latency charts", "Incident markers", "Alert routing"],
+    url: "https://github.com/nazifishrak/FeathersMCP",
+    members: ["Nazif Ishrak", "Maharaj Haider", "Dinh Nam Khanh Le", "Nariman Tavakoli", "Maggie Weng"],
     gradient: "linear-gradient(145deg, #7C3AED, #1E1B4B)",
     gallery: ["Event Stream", "Latency View", "Alert Center"],
   },
   {
     id: "feathers-c",
-    title: "Migration Assistant CLI",
-    team: "Team L",
+    team: "Team C",
     client: "FeathersJS",
-    description:
-      "Built a guided CLI assistant that auto-generates migration plans and codemods for legacy Feathers projects.",
-    stack: ["TypeScript", "Node CLI", "AST Tools", "Vitest"],
-    members: ["Quinn", "Mina", "Tariq", "Alice", "Jon"],
-    features: ["Upgrade diagnostics", "Codemod generation", "Rollback support", "Compatibility checks"],
+    url: "https://github.com/TeaBreeze00/cspc319_feathersJS_C",
+    members: ["Kush Sharma", "Sirjak Poudel", "Kavyansh Bansal", "Martin de Juan", "Shams Tibriz"],
     gradient: "linear-gradient(130deg, #9333EA, #111827)",
     gallery: ["CLI Diagnostics", "Migration Plan", "Generated Codemods"],
   },
   {
     id: "openwebui-a",
-    title: "Secure Prompt Workbench",
-    team: "Team M",
+    team: "Team A",
     client: "Open WebUI",
-    description:
-      "Developed a role-aware prompt workspace with shared libraries and policy checks for internal model operations.",
-    stack: ["React", "FastAPI", "PostgreSQL", "OpenAPI"],
-    members: ["Reese", "Hana", "Victor", "Neha", "Cole"],
-    features: ["Prompt templates", "Policy validation", "Workspace permissions", "Session analytics"],
+    url: "https://tabularag.vercel.app/",
+    members: ["Charmaine Halim", "Angela Felicia", "Marie Fidelia", "Suhayl Patel", "Jessica Patricia"],
     gradient: "linear-gradient(140deg, #0EA5A4, #1E3A8A)",
     gallery: ["Prompt Library", "Policy Checks", "Session Reports"],
   },
   {
     id: "openwebui-b",
-    title: "Model Governance Console",
-    team: "Team N",
+    team: "Team B",
     client: "Open WebUI",
-    description:
-      "Created governance tooling for model lifecycle workflows, including approvals, audit trails, and usage visibility.",
-    stack: ["Next.js", "Go", "PostgreSQL", "Docker"],
-    members: ["Jia", "Mateo", "Layla", "Ben", "Iman"],
-    features: ["Approval gates", "Audit timeline", "Usage dashboards", "Policy exceptions"],
+    url: "https://cpsc319.jaskiratgill.ca/",
+    members: ["Crystal Zhao", "Rui Xia", "Shibo Ai", "Jaskirat Gill"],
     gradient: "linear-gradient(145deg, #14B8A6, #164E63)",
     gallery: ["Model Catalog", "Approvals", "Audit Timeline"],
   },
@@ -240,9 +179,6 @@ const countdownEl = document.getElementById("countdown");
 const visitCountEl = document.getElementById("visit-count");
 const rsvpCountEl = document.getElementById("rsvp-count");
 const form = document.getElementById("rsvp-form");
-const formSuccess = document.getElementById("form-success");
-const formStatus = document.getElementById("form-status");
-const submitButton = document.querySelector(".submit");
 const toast = document.getElementById("toast");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const headerHeightOffset = 96;
@@ -256,6 +192,27 @@ const storageKeys = {
   visitSessionFlag: "cpsc319_visit_counted",
   theme: "cpsc319_theme",
 };
+
+const projectImageSets = {
+  "benevity-a": ["images/benevityA1.png", "images/benevityA2.png"],
+  "benevity-b": ["images/benevityB1.png", "images/benevityB2.png"],
+  "benevity-c": ["images/benevityC2.jpeg", "images/benevityC1.jpeg"],
+  "surrey-a": ["images/surreyA1.png", "images/surreyA2.png"],
+  "surrey-b": ["images/surreyB1.png", "images/surreyB2.png"],
+  "surrey-c": ["images/surreyC1.png", "images/surreyC2.png"],
+  "auntleahs-a": ["images/leahA1.png", "images/leahA2.png"],
+  "auntleahs-b": ["images/leahB1.png", "images/leahB2.png"],
+  "auntleahs-c": ["images/leahC1.png", "images/leahC2.png"],
+  "feathers-a": ["images/feathersA1.png", "images/feathersA2.png"],
+  "feathers-b": ["images/feathersB1.png", "images/feathersB2.png"],
+  "feathers-c": ["images/feathersC1.png", "images/feathersC2.png"],
+  "openwebui-a": ["images/openA1.png", "images/openA2.png"],
+  "openwebui-b": ["images/openB1.png", "images/openB2.png"],
+};
+
+function getProjectImages(project) {
+  return projectImageSets[project.id] || [];
+}
 
 function readJSON(key, fallback) {
   try {
@@ -316,6 +273,7 @@ function updateVisitCount() {
 }
 
 function updateRsvpCount() {
+  if (!rsvpCountEl) return;
   const records = readJSON(storageKeys.rsvps, []);
   rsvpCountEl.textContent = String(records.length);
 }
@@ -327,8 +285,7 @@ function renderClients() {
       <article class="client-card glass reveal" style="--client-color:${client.color}">
         <div class="logo-badge" style="background:${client.color}">${client.acronym}</div>
         <h3>${client.name}</h3>
-        <p>${shortenText(client.description, 13)}</p>
-        <span class="teams-tag">${client.teams} Teams</span>
+        <p>${client.description}</p>
       </article>
     `,
     )
@@ -367,15 +324,45 @@ function filteredProjects() {
 }
 
 function projectCardTemplate(project) {
+  const images = getProjectImages(project);
+  const hasImages = images.length > 0;
+  const controls = hasImages
+    ? `
+      <button class="media-arrow prev" type="button" aria-label="Show previous image for ${project.title}">
+        ‹
+      </button>
+      <button class="media-arrow next" type="button" aria-label="Show next image for ${project.title}">
+        ›
+      </button>
+      <div class="media-dots" aria-hidden="true">
+        ${images.map((_, index) => `<span class="media-dot${index === 0 ? " active" : ""}"></span>`).join("")}
+      </div>
+    `
+    : `<span>Coming Soon</span>`;
+
   return `
-    <article class="project-card glass" data-project-id="${project.id}" tabindex="0" role="button" aria-label="Open details for ${project.title}">
-      <div class="project-media" style="background:${project.gradient}">
-        <span>Coming Soon</span>
+    <article class="project-card glass" data-project-id="${project.id}" tabindex="0" role="button" aria-label="Open details for ${project.client} ${project.team}">
+      <div class="project-media${hasImages ? " has-images" : ""}" style="background:${project.gradient}" data-image-index="0">
+        ${
+          hasImages
+            ? images
+                .map(
+                  (src, index) => `
+          <img
+            class="project-shot${index === 0 ? " active" : ""}"
+            src="${src}"
+            alt="${project.client} ${project.team} preview ${index + 1}"
+            loading="lazy"
+            draggable="false"
+          />
+        `,
+                )
+                .join("")
+            : ""
+        }
+        ${controls}
       </div>
       <h3 class="project-title">${project.client} — ${project.team}</h3>
-      <p class="project-client">${project.title}</p>
-      <p class="project-desc">${shortenText(project.description, 15)}</p>
-      <div class="chips">${project.stack.map((tech) => `<span class="chip">${tech}</span>`).join("")}</div>
       <p class="team-line">${project.members.join(" · ")}</p>
     </article>
   `;
@@ -386,6 +373,7 @@ function renderProjects(withTransition = false) {
   const paint = () => {
     projectGrid.innerHTML = targetProjects.map(projectCardTemplate).join("");
     wireProjectCards();
+    wireProjectCarousels();
   };
 
   if (!withTransition || prefersReducedMotion) {
@@ -406,22 +394,32 @@ function findProjectById(id) {
 
 function openModal(project) {
   if (!project) return;
+  const images = getProjectImages(project);
   document.getElementById("modal-client").textContent = project.client;
   document.getElementById("modal-title").textContent = `${project.title} (${project.team})`;
-  document.getElementById("modal-description").textContent = project.description;
   document.getElementById("modal-team").textContent = project.members.join(" · ");
-  document.getElementById("modal-features").innerHTML = project.features
-    .map((feature) => `<span class="chip">${feature}</span>`)
-    .join("");
-  document.getElementById("modal-gallery").innerHTML = project.gallery
-    .map(
-      (label, index) => `
-      <div class="modal-shot" style="background:${project.gradient}; opacity:${0.75 + index * 0.1}">
+  document.getElementById("modal-gallery").innerHTML = images.length
+    ? images
+        .map(
+          (src, index) => `
+      <img
+        class="modal-shot"
+        src="${src}"
+        alt="${project.client} ${project.team} screenshot ${index + 1}"
+        loading="lazy"
+      />
+    `,
+        )
+        .join("")
+    : project.gallery
+        .map(
+          (label, index) => `
+      <div class="modal-shot modal-shot-placeholder" style="background:${project.gradient}; opacity:${0.75 + index * 0.1}">
         ${label}
       </div>
     `,
-    )
-    .join("");
+        )
+        .join("");
   modal.hidden = false;
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
@@ -433,16 +431,82 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
+function openProjectDestination(project) {
+  if (!project) return;
+  if (project.url) {
+    window.open(project.url, "_blank", "noopener,noreferrer");
+    return;
+  }
+  openModal(project);
+}
+
 function wireProjectCards() {
   projectGrid.querySelectorAll(".project-card").forEach((card) => {
     const id = card.getAttribute("data-project-id");
     const project = findProjectById(id);
-    card.addEventListener("click", () => openModal(project));
+    card.addEventListener("click", () => openProjectDestination(project));
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        openModal(project);
+        openProjectDestination(project);
       }
+    });
+  });
+}
+
+function updateProjectMedia(media, nextIndex) {
+  const shots = Array.from(media.querySelectorAll(".project-shot"));
+  const dots = Array.from(media.querySelectorAll(".media-dot"));
+  if (!shots.length) return;
+
+  shots.forEach((shot, index) => {
+    shot.classList.toggle("active", index === nextIndex);
+  });
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === nextIndex);
+  });
+  media.dataset.imageIndex = String(nextIndex);
+}
+
+function wireProjectCarousels() {
+  projectGrid.querySelectorAll(".project-media.has-images").forEach((media) => {
+    const shots = Array.from(media.querySelectorAll(".project-shot"));
+    if (shots.length < 2) return;
+
+    const step = (direction) => {
+      const currentIndex = Number(media.dataset.imageIndex || 0);
+      const nextIndex = (currentIndex + direction + shots.length) % shots.length;
+      updateProjectMedia(media, nextIndex);
+    };
+
+    media.querySelector(".media-arrow.prev")?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      step(-1);
+    });
+
+    media.querySelector(".media-arrow.next")?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      step(1);
+    });
+
+    let startX = 0;
+    let pointerActive = false;
+
+    media.addEventListener("pointerdown", (event) => {
+      startX = event.clientX;
+      pointerActive = true;
+    });
+
+    media.addEventListener("pointerup", (event) => {
+      if (!pointerActive) return;
+      const deltaX = event.clientX - startX;
+      pointerActive = false;
+      if (Math.abs(deltaX) < 30) return;
+      step(deltaX < 0 ? 1 : -1);
+    });
+
+    media.addEventListener("pointercancel", () => {
+      pointerActive = false;
     });
   });
 }
@@ -610,37 +674,10 @@ function confettiBurst() {
 }
 
 function setupRsvpForm() {
+  if (!form) return;
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!form.checkValidity()) {
-      formStatus.textContent = "Please complete the required fields.";
-      form.reportValidity();
-      return;
-    }
-
-    const values = new FormData(form);
-    const payload = {
-      fullName: values.get("fullName"),
-      email: values.get("email"),
-      role: values.get("role"),
-      source: values.get("source"),
-      needs: values.get("needs"),
-      updates: values.get("updates") === "on",
-      createdAt: new Date().toISOString(),
-    };
-    const records = readJSON(storageKeys.rsvps, []);
-    records.push(payload);
-    writeJSON(storageKeys.rsvps, records);
-    updateRsvpCount();
-
-    submitButton.classList.add("submitted");
-    formStatus.textContent = "RSVP captured locally. Connect this form to Formspree or Apps Script for production.";
-    confettiBurst();
-    window.setTimeout(() => {
-      form.hidden = true;
-      formSuccess.hidden = false;
-      showToast("You're in. See you at the showcase.");
-    }, 420);
+    form.reportValidity();
   });
 }
 
