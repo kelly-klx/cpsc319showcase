@@ -120,7 +120,6 @@ a {
   color: var(--muted);
 }
 
-<<<<<<< HEAD
 .nav-toggle {
   display: none !important;
   width: 2.5rem;
@@ -144,9 +143,6 @@ a {
   background: currentColor;
   transition: transform 180ms ease, opacity 180ms ease;
 }
-
-=======
->>>>>>> origin/main
 nav {
   display: flex;
   align-items: center;
@@ -399,11 +395,7 @@ p {
 
 .signal-grid {
   display: grid;
-<<<<<<< HEAD
   grid-template-columns: 1fr;
-=======
-  grid-template-columns: repeat(2, minmax(0, 1fr));
->>>>>>> origin/main
   gap: 0.55rem;
 }
 
@@ -411,11 +403,7 @@ p {
   border: 1px solid var(--card-border);
   background: color-mix(in srgb, var(--card) 92%, transparent);
   border-radius: 0.85rem;
-<<<<<<< HEAD
   padding: 0.95rem 1rem;
-=======
-  padding: 0.75rem;
->>>>>>> origin/main
 }
 
 .signal-label {
@@ -427,22 +415,14 @@ p {
 
 .signal-value {
   font-family: "Space Grotesk", sans-serif;
-<<<<<<< HEAD
   font-size: 1.35rem;
   margin-top: 0.18rem;
-=======
-  font-size: 1rem;
-  margin-top: 0.1rem;
->>>>>>> origin/main
 }
 
 .live-bars {
   display: grid;
   gap: 0.45rem;
-<<<<<<< HEAD
   margin-top: 0.25rem;
-=======
->>>>>>> origin/main
 }
 
 .live-bars span {
@@ -487,11 +467,7 @@ p {
 
 .quick-jump {
   width: fit-content;
-<<<<<<< HEAD
   margin-top: 0.35rem;
-=======
-  margin-top: 0.1rem;
->>>>>>> origin/main
 }
 
 .scroll-cue {
@@ -1241,7 +1217,6 @@ a:focus-visible {
     margin-top: 0.6rem;
     gap: 0.6rem;
     padding: 0.85rem 0.9rem;
-<<<<<<< HEAD
     border-radius: 1.3rem;
     align-items: center;
     flex-wrap: wrap;
@@ -1280,31 +1255,13 @@ a:focus-visible {
 
   .site-header.nav-open .nav-toggle span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
-=======
-  }
-
-  nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 0.2rem;
->>>>>>> origin/main
   }
 
   nav a {
     white-space: nowrap;
-<<<<<<< HEAD
     padding: 0.38rem 0;
     font-size: 0.9rem;
     width: 100%;
-=======
-    padding: 0.22rem 0.16rem;
-    font-size: 0.9rem;
-  }
-
-  nav::-webkit-scrollbar {
-    display: none;
->>>>>>> origin/main
   }
 
   .hero {
@@ -1350,12 +1307,7 @@ a:focus-visible {
   }
 
   .hero-visual {
-<<<<<<< HEAD
     display: none;
-=======
-    padding: 1rem 0.95rem;
-    border-radius: 1rem;
->>>>>>> origin/main
   }
 
   .signal-grid {
