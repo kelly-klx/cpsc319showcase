@@ -629,6 +629,8 @@ p {
   border-radius: 1rem;
   padding: 0.95rem;
   position: relative;
+  background: color-mix(in srgb, var(--accent) 22%, var(--card));
+  border: 0;
   transition:
     transform 220ms cubic-bezier(0.19, 1, 0.22, 1),
     box-shadow 220ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -647,21 +649,37 @@ p {
   z-index: -1;
 }
 
+.client-card-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
 .logo-badge {
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 0.72rem;
-  display: inline-grid;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 0.9rem;
+  display: grid;
   place-items: center;
   font-weight: 700;
   font-size: 0.82rem;
-  margin-bottom: 0.6rem;
+  flex: 0 0 auto;
   color: #fff;
+  overflow: hidden;
+}
+
+.logo-badge img {
+  width: calc(100% - 0.5rem);
+  height: calc(100% - 0.5rem);
+  object-fit: contain;
+  display: block;
 }
 
 .client-card h3 {
   font-size: 1.02rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0;
 }
 
 .client-card p {
@@ -939,6 +957,51 @@ p {
   width: min(720px, 100%);
   margin-inline: auto;
   padding: 1.25rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.05rem;
+  align-items: stretch;
+}
+
+.staff-card {
+  border-radius: 1.15rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.staff-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.staff-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.32rem;
+}
+
+.staff-role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.76rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.staff-project {
+  margin-top: 0.48rem;
+  color: var(--muted);
+  line-height: 1.62;
+  font-size: 0.92rem;
+  flex: 1;
 }
 
 form {
@@ -1346,12 +1409,41 @@ a:focus-visible {
     display: none;
   }
 
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .staff-card {
+    padding: 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .staff-photo {
+    border-radius: 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .staff-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .staff-role {
+    font-size: 0.68rem;
+  }
+
+  .staff-project {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
   .filter-pill {
     flex: 0 0 auto;
   }
 
   .client-grid,
   .project-grid,
+  .team-grid,
   .event-layout,
   .modal-gallery {
     grid-template-columns: 1fr;

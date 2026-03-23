@@ -3,41 +3,46 @@ const clients = [
     name: "Benevity",
     acronym: "BE",
     url: "https://benevity.com/",
+    logo: "images/benevitylogo.jpeg",
     description:
       "Benevity is a software company that provides a corporate purpose platform supporting corporate social responsibility initiatives. The platform enables organizations to engage employees, customers, and communities through vetted nonprofit partnerships.",
-    color: "#0055B7",
+    color: "#ffffffff",
   },
   {
     name: "Surrey Food Bank",
     acronym: "SF",
     url: "https://surreyfoodbank.org/",
+    logo: "images/surreyfoodbanklogo.jpg",
     description:
       "Serving since 1983, The Surrey Food Bank Society is a non-profit organization whose mission is to provide food assistance and support services to individuals and families in need within Surrey and North Delta, British Columbia.",
-    color: "#34A853",
+    color: "#ffffffff",
   },
   {
     name: "Aunt Leah's",
     acronym: "AL",
     url: "https://auntleahs.org/",
+    logo: "images/auntleahslogo.png",
     description:
       "Aunt Leah's Place is a nonprofit organization that supports supporting at-risk youth and mothers. They provide housing, education, and life skills training to help young people and mothers transition to independent living.",
-    color: "#E65100",
+    color: "#ffffffff",
   },
   {
     name: "FeathersJS",
     acronym: "FJ",
     url: "https://feathers.dev/",
+    logo: "images/featherslogo.svg",
     description:
       "FeathersJS is an open source full-stack web-framework for creating APIs and real-time applications with TypeScript or JavaScript. It can interact with any backend and frontend technology, and supports many databases out of the box.",
-    color: "#7C3AED",
+    color: "#ffffffff",
   },
   {
     name: "Open WebUI",
     acronym: "OW",
     url: "https://openwebui.com/",
+    logo: "images/openwebuilogo.png",
     description:
       "Open WebUI is a self-hosted AI platform that provides a web-based workspace for interacting with LLMs and integrating AI into internal workflows. The platform emphasizes privacy, offline or controlled deployments, and flexibility.",
-    color: "#0EA5A4",
+    color: "#ffffffff",
   },
 ];
 
@@ -304,7 +309,16 @@ function renderClients() {
         aria-label="${client.url ? `Open ${client.name} website` : client.name}"
         style="--client-color:${client.color}"
       >
-        <h3>${client.name}</h3>
+        <div class="client-card-head">
+          <h3>${client.name}</h3>
+          <div class="logo-badge" style="background:${client.color}">
+            ${
+              client.logo
+                ? `<img src="${client.logo}" alt="${client.name} logo" loading="lazy" />`
+                : client.acronym
+            }
+          </div>
+        </div>
         <p>${client.description}</p>
       </article>
     `,
