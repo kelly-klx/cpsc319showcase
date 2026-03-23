@@ -3,41 +3,46 @@ const clients = [
     name: "Benevity",
     acronym: "BE",
     url: "https://benevity.com/",
+    logo: "images/benevitylogo.jpeg",
     description:
       "Benevity is a software company that provides a corporate purpose platform supporting corporate social responsibility initiatives. The platform enables organizations to engage employees, customers, and communities through vetted nonprofit partnerships.",
-    color: "#0055B7",
+    color: "#ffffffff",
   },
   {
     name: "Surrey Food Bank",
     acronym: "SF",
     url: "https://surreyfoodbank.org/",
+    logo: "images/surreyfoodbanklogo.jpg",
     description:
       "Serving since 1983, The Surrey Food Bank Society is a non-profit organization whose mission is to provide food assistance and support services to individuals and families in need within Surrey and North Delta, British Columbia.",
-    color: "#34A853",
+    color: "#ffffffff",
   },
   {
     name: "Aunt Leah's",
     acronym: "AL",
     url: "https://auntleahs.org/",
+    logo: "images/auntleahslogo.png",
     description:
       "Aunt Leah's Place is a nonprofit organization that supports supporting at-risk youth and mothers. They provide housing, education, and life skills training to help young people and mothers transition to independent living.",
-    color: "#E65100",
+    color: "#ffffffff",
   },
   {
     name: "FeathersJS",
     acronym: "FJ",
     url: "https://feathers.dev/",
+    logo: "images/featherslogo.svg",
     description:
       "FeathersJS is an open source full-stack web-framework for creating APIs and real-time applications with TypeScript or JavaScript. It can interact with any backend and frontend technology, and supports many databases out of the box.",
-    color: "#7C3AED",
+    color: "#ffffffff",
   },
   {
     name: "Open WebUI",
     acronym: "OW",
     url: "https://openwebui.com/",
+    logo: "images/openwebuilogo.png",
     description:
       "Open WebUI is a self-hosted AI platform that provides a web-based workspace for interacting with LLMs and integrating AI into internal workflows. The platform emphasizes privacy, offline or controlled deployments, and flexibility.",
-    color: "#0EA5A4",
+    color: "#ffffffff",
   },
 ];
 
@@ -47,7 +52,7 @@ const projects = [
     team: "Team A",
     client: "Benevity",
     url: "https://benevity-reach.vercel.app/",
-    members: ["Sarah Yu", "Gordon Chieng", "Anahita Golshani", "Kevin Liu", "Rafael Park"],
+    members: ["Gordon Chieng", "Anahita Golshani", "Kevin Liu", "Rafael Park", "Sarah Yu"],
     gradient: "linear-gradient(135deg, #1C64F2, #0B1C38)",
     gallery: ["Dashboard", "Story Builder", "Campaign Insights"],
   },
@@ -56,7 +61,7 @@ const projects = [
     team: "Team B",
     client: "Benevity",
     url: "https://benevity-impact-project.web.app/",
-    members: ["Meera Jheeta", "Michealla Koan", "Nicholas Januar", "Nathan Jiang", "Trung Nguyen"],
+    members: ["Nicholas Januar", "Meera Jheeta", "Nathan Jiang", "Michealla Koan", "Trung Nguyen"],
     gradient: "linear-gradient(145deg, #2563EB, #60A5FA)",
     gallery: ["Matching Engine", "Availability Planner", "Shift Snapshot"],
   },
@@ -74,7 +79,7 @@ const projects = [
     team: "Team A",
     client: "Surrey Food Bank",
     url: "https://annaliese8.github.io/CPSC319_Project/#/entrance-portal-1M8F/login",
-    members: ["Annaliese Ferchau", "Mehrshad Esmaeilzadeh", "Kathrina Pillay", "Ishan Singh", "Nina Trochtchanovitch"],
+    members: ["Mehrshad Esmaeilzadeh", "Annaliese Ferchau", "Kathrina Pillay", "Ishan Singh", "Nina Trochtchanovitch"],
     gradient: "linear-gradient(145deg, #15803D, #86EFAC)",
     gallery: ["Request Intake", "Route Board", "Volunteer Assignments"],
   },
@@ -83,7 +88,7 @@ const projects = [
     team: "Team B",
     client: "Surrey Food Bank",
     url: "http://surreyfoodbank.duckdns.org/",
-    members: ["Hsiang-chen Alan Wu", "Aric Chan", "Kevin Xu", "Aman Dhaddey", "Eric Zhang"],
+    members: ["Aric Chan", "Aman Dhaddey", "Hsiang-chen Alan Wu", "Kevin Xu", "Eric Zhang"],
     gradient: "linear-gradient(130deg, #16A34A, #14532D)",
     gallery: ["Forecasting", "Low Stock Feed", "Campaign Planner"],
   },
@@ -92,7 +97,7 @@ const projects = [
     team: "Team C",
     client: "Surrey Food Bank",
     url: "https://surrey-food-bank-frontend.onrender.com/",
-    members: ["Allison Ko", "Lokesh Sandhu", "Pia Lo", "Sanyu Lin", "John Man"],
+    members: ["Allison Ko", "Sanyu Lin", "Pia Lo", "John Man", "Lokesh Sandhu"],
     gradient: "linear-gradient(150deg, #22C55E, #065F46)",
     gallery: ["Agency Portal", "Intake Packet", "Referral Status"],
   },
@@ -110,7 +115,7 @@ const projects = [
     team: "Team B",
     client: "Aunt Leah's",
     url: "https://aunt-leah-b.vercel.app/",
-    members: ["Shreyan Das", "Aryan Saini", "David Falade", "Kyaw Min Oo", "Michael Sam"],
+    members: ["Shreyan Das", "David Falade", "Kyaw Min Oo", "Aryan Saini", "Michael Sam"],
     gradient: "linear-gradient(145deg, #F97316, #FDBA74)",
     gallery: ["Impact Dashboard", "Donor Segments", "Campaign Results"],
   },
@@ -119,7 +124,7 @@ const projects = [
     team: "Team C",
     client: "Aunt Leah's",
     url: "https://d3jqquumsq5ngm.cloudfront.net/",
-    members: ["Kaicheng Lu", "Vitor Wakamatsu", "Howard Sun", "Ch Muhammad Daud Virk", "Zishan Wang"],
+    members: ["Kaicheng Lu", "Howard Sun", "Ch Muhammad Daud Virk", "Vitor Wakamatsu", "Zishan Wang"],
     gradient: "linear-gradient(150deg, #EA580C, #7C2D12)",
     gallery: ["Onboarding", "Task Board", "Shift Planner"],
   },
@@ -137,7 +142,7 @@ const projects = [
     team: "Team B",
     client: "FeathersJS",
     url: "https://github.com/nazifishrak/FeathersMCP",
-    members: ["Nazif Ishrak", "Maharaj Haider", "Dinh Nam Khanh Le", "Nariman Tavakoli", "Maggie Weng"],
+    members: ["Maharaj Haider", "Nazif Ishrak", "Dinh Nam Khanh Le", "Nariman Tavakoli", "Maggie Weng"],
     gradient: "linear-gradient(145deg, #7C3AED, #1E1B4B)",
     gallery: ["Event Stream", "Latency View", "Alert Center"],
   },
@@ -146,7 +151,7 @@ const projects = [
     team: "Team C",
     client: "FeathersJS",
     url: "https://github.com/TeaBreeze00/cspc319_feathersJS_C",
-    members: ["Kush Sharma", "Sirjak Poudel", "Kavyansh Bansal", "Martin de Juan", "Shams Tibriz"],
+    members: ["Kavyansh Bansal", "Martin de Juan", "Sirjak Poudel", "Kush Sharma", "Shams Tibriz"],
     gradient: "linear-gradient(130deg, #9333EA, #111827)",
     gallery: ["CLI Diagnostics", "Migration Plan", "Generated Codemods"],
   },
@@ -155,7 +160,7 @@ const projects = [
     team: "Team A",
     client: "Open WebUI",
     url: "https://tabularag.vercel.app/",
-    members: ["Charmaine Halim", "Angela Felicia", "Marie Fidelia", "Suhayl Patel", "Jessica Patricia"],
+    members: ["Angela Felicia", "Marie Fidelia", "Charmaine Halim", "Suhayl Patel", "Jessica Patricia"],
     gradient: "linear-gradient(140deg, #0EA5A4, #1E3A8A)",
     gallery: ["Prompt Library", "Policy Checks", "Session Reports"],
   },
@@ -164,7 +169,7 @@ const projects = [
     team: "Team B",
     client: "Open WebUI",
     url: "https://cpsc319.jaskiratgill.ca/",
-    members: ["Crystal Zhao", "Rui Xia", "Shibo Ai", "Jaskirat Gill"],
+    members: ["Shibo Ai", "Jaskirat Gill", "Rui Xia", "Crystal Zhao"],
     gradient: "linear-gradient(145deg, #14B8A6, #164E63)",
     gallery: ["Model Catalog", "Approvals", "Audit Timeline"],
   },
@@ -304,7 +309,16 @@ function renderClients() {
         aria-label="${client.url ? `Open ${client.name} website` : client.name}"
         style="--client-color:${client.color}"
       >
-        <h3>${client.name}</h3>
+        <div class="client-card-head">
+          <h3>${client.name}</h3>
+          <div class="logo-badge" style="background:${client.color}">
+            ${
+              client.logo
+                ? `<img src="${client.logo}" alt="${client.name} logo" loading="lazy" />`
+                : client.acronym
+            }
+          </div>
+        </div>
         <p>${client.description}</p>
       </article>
     `,
@@ -558,10 +572,11 @@ function updateCountdown() {
   const target = new Date("2026-04-08T17:30:00-07:00").getTime();
   const now = Date.now();
   const delta = target - now;
+  const eventDate = "Wed, April 8, 2026";
 
   if (delta <= 0) {
-    countdownEl.textContent = "Showcase in progress or completed.";
-    if (heroCountdownEl) heroCountdownEl.textContent = "Live";
+    countdownEl.textContent = eventDate;
+    if (heroCountdownEl) heroCountdownEl.textContent = eventDate;
     return;
   }
 
@@ -569,7 +584,7 @@ function updateCountdown() {
   const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((delta / (1000 * 60)) % 60);
   const seconds = Math.floor((delta / 1000) % 60);
-  const compact = `${days}d ${hours}h ${minutes}m`;
+  const compact = `${days} days ${hours} hours ${minutes} mins`;
   countdownEl.textContent = `${compact} ${seconds}s`;
   if (heroCountdownEl) heroCountdownEl.textContent = compact;
 }
