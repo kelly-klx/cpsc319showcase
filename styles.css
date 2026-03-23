@@ -466,9 +466,13 @@ p {
   padding: 0 1rem;
 }
 
-.quick-jump {
+.button.ghost.quick-jump {
   width: fit-content;
   margin-top: 0.35rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(0, 58, 127, 0.2);
 }
 
 .scroll-cue {
