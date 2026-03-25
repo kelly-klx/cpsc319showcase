@@ -46,6 +46,56 @@ const clients = [
   },
 ];
 
+const teachingTeam = [
+  {
+    name: "Parsa Rajabi",
+    pronouns: "he/him",
+    role: "Course Instructor and Senior Project Manager",
+    image: "images/parsa.jpg",
+    url: "https://parsa-rajabi.github.io/",
+  },
+  {
+    name: "Mahdi Abootorabi",
+    pronouns: "he/him",
+    role: "Project Owner: Benevity",
+    image: "images/mahdi.png",
+    url: "https://aboots.github.io/",
+  },
+  {
+    name: "Liz Cho",
+    pronouns: "she/her",
+    role: "Project Owner: Aunt Leah's",
+    image: "images/liz.png",
+    url: "https://www.linkedin.com/in/yebin-cho/",
+  },
+  {
+    name: "Stash Currie",
+    pronouns: "he/him",
+    role: "Project Owner: FeathersJS",
+    image: "images/stash.png",
+    url: "https://stashcurrie.com",
+  },
+  {
+    name: "Fahim Gbon",
+    pronouns: "he/him",
+    role: "Course Coordinator",
+    image: "images/fahim.png",
+  },
+  {
+    name: "Mohsen Salehi",
+    pronouns: "he/him",
+    role: "Project Owner: Surrey Food Bank",
+    image: "images/mohsen.png",
+    url: "https://people.ece.ubc.ca/msalehi/",
+  },
+  {
+    name: "Kelly Xi",
+    pronouns: "she/her",
+    role: "Project Owner: Open WebUI",
+    image: "images/kelly.png",
+  },
+];
+
 const projects = [
   {
     id: "benevity-a",
@@ -78,7 +128,7 @@ const projects = [
     id: "surrey-a",
     team: "Team A",
     client: "Surrey Food Bank",
-    url: "https://annaliese8.github.io/CPSC319_Project/#/entrance-portal-1M8F/login",
+    url: "https://annaliese8.github.io/CPSC319_Project/#/applicant/create-account",
     members: ["Mehrshad Esmaeilzadeh", "Annaliese Ferchau", "Kathrina Pillay", "Ishan Singh", "Nina Trochtchanovitch"],
     gradient: "linear-gradient(145deg, #15803D, #86EFAC)",
     gallery: ["Request Intake", "Route Board", "Volunteer Assignments"],
@@ -178,6 +228,7 @@ const projects = [
 const stats = Array.from(document.querySelectorAll(".stat-number[data-target]"));
 const clientGrid = document.getElementById("client-grid");
 const projectGrid = document.getElementById("project-grid");
+const teamGrid = document.getElementById("team-grid");
 const filterBar = document.getElementById("project-filters");
 const themeToggle = document.getElementById("theme-toggle");
 const navToggle = document.getElementById("nav-toggle");
@@ -326,6 +377,28 @@ function renderClients() {
     .join("");
 
   wireClientCards();
+}
+
+function renderTeachingTeam() {
+  if (!teamGrid) return;
+
+  teamGrid.innerHTML = teachingTeam
+    .map((person) => {
+      const Tag = person.url ? "a" : "article";
+      const attrs = person.url
+        ? `href="${person.url}" target="_blank" rel="noreferrer" aria-label="Open ${person.name} website"`
+        : "";
+
+      return `
+      <${Tag} class="glass staff-card${person.url ? " staff-card-link" : ""}" ${attrs}>
+        <img class="staff-photo" src="${person.image}" alt="${person.name}" loading="lazy" />
+        <h3>${person.name}</h3>
+        <p class="staff-pronouns">${person.pronouns}</p>
+        <p class="staff-role">${person.role}</p>
+      </${Tag}>
+    `;
+    })
+    .join("");
 }
 
 function openClientDestination(client) {
@@ -929,6 +1002,7 @@ function setup() {
   themeToggle.addEventListener("click", toggleTheme);
 
   renderClients();
+  renderTeachingTeam();
   renderFilters();
   renderProjects();
   wireModal();
