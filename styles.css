@@ -509,6 +509,11 @@ p {
     box-shadow: var(--strong-shadow);
   }
 
+  .staff-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--strong-shadow);
+  }
+
   .filter-pill:hover {
     color: #fff;
     background: linear-gradient(135deg, var(--accent), var(--primary));
@@ -972,6 +977,15 @@ p {
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition:
+    transform 220ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 220ms cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+.staff-card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .staff-photo {
@@ -984,6 +998,12 @@ p {
 
 .staff-card h3 {
   font-size: 1.05rem;
+  margin-bottom: 0.32rem;
+}
+
+.staff-pronouns {
+  font-size: 0.84rem;
+  color: var(--muted);
   margin-bottom: 0.32rem;
 }
 
