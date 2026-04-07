@@ -39,6 +39,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 html {
@@ -51,7 +55,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .bg-gradient {
@@ -202,6 +206,7 @@ nav a:focus-visible::after {
 
 main {
   padding-bottom: 5rem;
+  overflow-x: clip;
 }
 
 .section {
@@ -217,6 +222,7 @@ main {
   min-height: 92vh;
   padding: 6.2rem 0 4rem;
   position: relative;
+  overflow-x: clip;
 }
 
 .hero::before {
@@ -1307,6 +1313,7 @@ a:focus-visible {
     border-radius: 1.3rem;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 100%;
   }
 
   .nav-toggle {
